@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+      <?php 
+      echo "<p>Označi vozilo:</p>";
+      $cars = array("Audi", "BMW","Renault","Citroen");
+      echo "<form method='POST' action='' id='cars'>
+      <select name='car' required autocomplete='off'>
+        <option value=''>Please select</option>";
+    foreach($cars as $car){
+        echo '<option value="' .$car . '"> ' .$car . '</option>';
+    }
+
+    echo "
+    </select>
+    <p><input type='submit' value='pošalji'></p>
+    </form>";
+    if(isset($_POST['car']))  {echo $_POST['car'];}
+    ?>
+  </body>
+  </html>
